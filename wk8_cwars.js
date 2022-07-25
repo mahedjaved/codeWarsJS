@@ -1,4 +1,4 @@
-require("./utils");
+const { isFloat } = require("./utils/index");
 // continuing after a month and a week sabbaticall -- Week 8 MasterCN
 
 // details : 1) 7th Kyu  2)
@@ -13,11 +13,7 @@ require("./utils");
 
 // }
 
-//  1hr == 60mins
-// 1min == 60sec
-
-console.log();
-
+//  Just a reminder that :: 1hr == 60mins || 1min == 60sec
 const inputTime = 120;
 
 let hours = 0;
@@ -35,9 +31,9 @@ switch (true) {
 	case inputTime > 60:
 		// get minutes here
 		minutes = inputTime / 60;
-		// if there is residue, set that to seconds
-		if () {
-			// set the floating reminas of input time to seconds
+		// if there is decimal residue, set that to seconds
+		if (isFloat(minutes)) {
+			// set the decimal residues of input time to seconds
 			seconds = Math.floor((minutes % 1) * 100);
 			console.log(`HH: 00  MM: ${Math.floor(minutes)}  SS: ${seconds}`);
 		} else {
@@ -46,7 +42,7 @@ switch (true) {
 		}
 		break;
 
-	// DEFAULT
+	// DEFAULT input time error logging
 	default:
 		console.log("Incorrect input time !");
 		break;
