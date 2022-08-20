@@ -24,7 +24,9 @@ let seconds = 0;
 switch (true) {
 	// ONLY SECONDS
 	case inputTime < 60:
-		console.log(`HH: 00  MM: 00  SS: ${String(inputTime).padStart(2, "0")}`);
+		console.log(
+			`HH: 00  MM: 00  SS: ${String(inputTime).padStart(2, "0")}`
+		);
 		break;
 
 	// MINUTES AND HOURS
