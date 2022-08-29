@@ -12,25 +12,18 @@
 // amazing for animations ::: https://www.youtube.com/watch?v=qVaUxWdb9G0
 
 //  ALGOL 1 -- Using a dictionary
-const inBookStrg = ["BBAR 150", "CDXE 515", "BKWR 250", "BTSQ 890", "DRTY 600"];
-const catList = ["A", "B", "C", "D"];
+const listOfArt = ["BBAR 150", "CDXE 515", "BKWR 250", "BTSQ 890", "DRTY 600"];
+const listOfCat = ["A", "B", "C", "D"];
 
 let bookStorageDict = {};
-for (let i = 0; i < catList.length; i++) {
-	bookStorageDict[String(catList[i])] = 0;
+for (let i = 0; i < listOfCat.length; i++) {
+	bookStorageDict[String(listOfCat[i])] = 0;
 }
+const [code, number] = listOfArt[0].split(" ");
 
-console.log("Previous dictionary");
-console.log(bookStorageDict);
-
-const [code, number] = inBookStrg[0].split(" ");
-// find if there is a matching code in the dict
-// console.log(`${keyCheck} of type ${typeof keyCheck}`);
-// console.log(bookStorageDict[String(keyCheck)]);
-
-for (let i = 0; i < inBookStrg.length; i++) {
+for (let i = 0; i < listOfArt.length; i++) {
 	// split the entry into first letter, and the number
-	const [code, number] = inBookStrg[i].split(" ");
+	const [code, number] = listOfArt[i].split(" ");
 
 	// find if there is a matching code in the dict
 	if (code[0] in bookStorageDict) {
@@ -43,5 +36,10 @@ for (let i = 0; i < inBookStrg.length; i++) {
 	}
 }
 
-console.log("After dictionary");
-console.log(bookStorageDict);
+let string_result = "";
+
+for (i in bookStorageDict) {
+	string_result += `(${i} : ${bookStorageDict[String(i)]}) - `;
+}
+string_result = string_result.slice(0, -2);
+console.log(string_result);
