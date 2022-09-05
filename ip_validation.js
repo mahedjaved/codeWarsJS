@@ -75,5 +75,3 @@ function isValidIP(str) {
             return true;
     }
 }
-
-isValidIP("12155.1514.asa.f141.af1");
