@@ -48,7 +48,7 @@ const hasSpaces = (str) => {
 // --------------------- answer below --------------------- //
 
 function isValidIP(str) {
-    switch (str) {
+    switch (true) {
         case hasAlphabet(str):
             console.log("[fail] has alphabet in it");
             return false;
@@ -59,10 +59,13 @@ function isValidIP(str) {
             console.log("[fail] has trailing zeroes");
             return false;
         case hasMoreThan4DPs(str):
-            console.log("[fail] has more than four decimals");
+            console.log("[fail] has MORE than four decimals");
+            return false;
+        case hasLessThan4DPs(str):
+            console.log("[fail] has LESS than four decimals");
             return false;
         case hasEndLineSymbol(str):
-            console.log("[fail] has the character \n in it");
+            console.log("[fail] has the character endline in it");
             return false;
         case hasSpaces(str):
             console.log("[fail] has spaces");
@@ -73,4 +76,4 @@ function isValidIP(str) {
     }
 }
 
-isValidIP(" 12.1414.155.1514");
+isValidIP("12155.1514.asa.f141.af1");
