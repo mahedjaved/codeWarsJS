@@ -30,3 +30,8 @@ function pigIt(str) {
 console.log(pigIt("Pig latin is cool"));
 console.log(pigIt("This is my string"));
 console.log(pigIt("O tempora o mores !"));
+
+// model solution
+// function pigIt(str){
+//     return str.replace(/(\w)(\w*)(\s|$)/g, "\$2\$1ay\$3")
+//   }
