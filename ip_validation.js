@@ -16,62 +16,69 @@
 
 // CHECK #8 - no commas allowed
 
+// CHECK #9 - has more than three
+
 const hasAlphabet = (str) => {
-    return /[a-zA-Z]/.test(str);
+	return /[a-zA-Z]/.test(str);
 };
 
 const hasNegativeSign = (str) => {
-    return str.includes("-");
+	return str.includes("-");
 };
 
 const hasTrailingZeroes = (str) => {
-    str = str.split(".");
-    return str.map((x) => x.charAt(0).includes("0")).includes(true);
+	str = str.split(".");
+	return str.map((x) => x.charAt(0).includes("0")).includes(true);
 };
 
 const hasMoreThan4DPs = (str) => {
-    return str.split(".").length > 4;
+	return str.split(".").length > 4;
 };
 
 const hasLessThan4DPs = (str) => {
-    return str.split(".").length < 4;
+	return str.split(".").length < 4;
 };
 
 const hasEndLineSymbol = (str) => {
-    return str.includes("\n");
+	return str.includes("\n");
 };
 
 const hasSpaces = (str) => {
-    return str.includes(" ");
+	return str.includes(" ");
 };
 
 // --------------------- answer below --------------------- //
 
 function isValidIP(str) {
-    switch (true) {
-        case hasAlphabet(str):
-            console.log("[fail] has alphabet in it");
-            return false;
-        case hasNegativeSign(str):
-            console.log("[fail] has negative number/s");
-            return false;
-        case hasTrailingZeroes(str):
-            console.log("[fail] has trailing zeroes");
-            return false;
-        case hasMoreThan4DPs(str):
-            console.log("[fail] has MORE than four decimals");
-            return false;
-        case hasLessThan4DPs(str):
-            console.log("[fail] has LESS than four decimals");
-            return false;
-        case hasEndLineSymbol(str):
-            console.log("[fail] has the character endline in it");
-            return false;
-        case hasSpaces(str):
-            console.log("[fail] has spaces");
-            return false;
-        default:
-            console.log("[pass] Check, perfect");
-            return true;
-    }
+	switch (true) {
+		case hasAlphabet(str):
+			console.log("[fail] has alphabet in it");
+			return false;
+		case hasNegativeSign(str):
+			console.log("[fail] has negative number/s");
+			return false;
+		case hasTrailingZeroes(str):
+			console.log("[fail] has trailing zeroes");
+			return false;
+		case hasMoreThan4DPs(str):
+			console.log("[fail] has MORE than four decimals");
+			return false;
+		case hasLessThan4DPs(str):
+			console.log("[fail] has LESS than four decimals");
+			return false;
+		case hasEndLineSymbol(str):
+			console.log("[fail] has the character endline in it");
+			return false;
+		case hasSpaces(str):
+			console.log("[fail] has spaces");
+			return false;
+		default:
+			console.log("[pass] Check, perfect");
+			return true;
+	}
 }
+
+// Read this solution later --> it solves everything in one line ---> my days !!
+// function isValidIP(str) {
+// 	return /^(([1-9]?\d|1\d\d|2[0-4]\d|25[0-5])(\.(?!$)|$)){4}$/.test(str);
+//   }
